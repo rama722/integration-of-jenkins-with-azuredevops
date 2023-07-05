@@ -1,0 +1,27 @@
+create infrastructures:
+- create vm or azure bitnami vm (attached jenkins)
+- run jenkins server host:8080
+- sudo cat /etc/init/jenkins...
+- using bitname vm runs directly this command use in commandpromt (putty.exe -ssh -L 8080:localhost:8080 <username>@<ip address>) - vm password, jenkins password sudo cat /home/bitnami/bitnami_credentials
+
+prepare sources code repository:
+- create project in azuredevops
+- push the source code repository
+
+create build pipeline in jenkins server:
+- vsts or vs team service install the manage plugin in jenkins server
+- maven plugin install in  jenkins server because you can use jave base project
+- go to global tool configuration (or) newly tool  add maven version this project 3.5.0
+- create project in jenkins server click new item + give the name + select project type(maven,pipeline,test..etc)
+- sources code repository tab 
+    -enter git repo credentails azure repo clone,git clone ,test..etc
+- build tab 
+    - pom.xml
+    - package-Dtest=FaresTest.SimpleTest
+    - post-build action tab:
+       target/*.war, *.sql
+create release pipeline in azure devops and integration of jenkins to azuredevops:
+- go to manage jenkins + configure + api token add (generate new token password )
+- come to azure devops server + project settings + service hooks + jenkins select(tigger select push code) + settings (url ex https://ip:8080 + api token jenkins)
+- service connection (htpp://ip:8080 , api token username)
+- 
