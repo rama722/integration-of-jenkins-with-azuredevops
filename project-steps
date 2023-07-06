@@ -21,7 +21,7 @@ create build pipeline in jenkins server:
     - post-build action tab:
        target/*.war, *.sql
 create release pipeline in azure devops and integration of jenkins to azuredevops:
-- go to manage jenkins + configure + api token add (generate new token password )
+- go to manage jenkins + userclick + configure + api token add (generate new token password )
 - come to azure devops server + project settings + service hooks + jenkins select(tigger select push code) + settings (url ex https://ip:8080 + api token jenkins)
 - service connection (htpp://ip:8080 , api token username)
 - 
